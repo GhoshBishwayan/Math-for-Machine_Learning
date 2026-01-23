@@ -15,7 +15,7 @@ y_pt = torch.tensor([25, 2, 5])
 y_pt_t = y_pt.T
 
 print("Vector before transpose: ", y_pt)
-print("Shape of the Vector before transpose: ", y_pt)
+print("Shape of the Vector before transpose: ", y_pt.shape)
 
-print("Length of the Transpose Vector: ", y_pt_t.shape)
+print("Shape of the Transpose Vector: ", y_pt_t.shape)
 print("The Transpose Vector: ", y_pt_t)
