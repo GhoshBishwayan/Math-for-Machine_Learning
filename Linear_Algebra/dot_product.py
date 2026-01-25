@@ -9,7 +9,7 @@ print("Implementing dot using Numpy ",np.dot(x,y))
 x_pt = torch.tensor([25,2,5])
 y_pt = torch.tensor([0,1,2])
 
-print("Implementing dot using Numpy, passing PyTorch Vector",np.dot(x_pt,y_pt))
+#print("Implementing dot using Numpy, passing PyTorch Vector",np.dot(x_pt,y_pt)) # We can pass integer based pytorch tensors to numpy but it is slow best if we avoid it
 
 print("Implementing dot using PyTorch, passing decimal/float based Vectors ", torch.dot(torch.tensor([25.,2.,5.]),torch.tensor([0.,1.,2.])))
 
