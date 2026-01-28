@@ -25,7 +25,11 @@ fig.canvas.manager.set_window_title("Elimination_eqn_visualizing")
 plt.xlabel('x')
 plt.ylabel('y')
 
-ax.set_xlim([0,9])
+# Add x and y axis
+plt.axhline(y=0, color='lightgrey')
+plt.axvline(x=0, color='lightgrey')
+
+ax.set_xlim([-2,9])
 ax.set_ylim([-5,8])
 
 ax.plot(x, y1,label='eqn-1' ,c='green')
