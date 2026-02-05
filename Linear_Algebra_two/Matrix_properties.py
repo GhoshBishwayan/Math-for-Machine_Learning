@@ -48,13 +48,31 @@ plt.xlim(-1,5)
 plt.ylim(-1,5)
 '''
 
-# 3rd commit
+# 3rd commit - Flips vector to x-axis
 E = np.array([[1,0],[0,-1]])
 
 Ev = np.dot(E, v)
-
+'''
 plot_vectors([v, Ev], ['lightgreen', 'green'])
 plt.xlim(-1,5)
 plt.ylim(-3,3)
+'''
+
+# 4th commit - Flips vector to y-axis 
+Y = np.array([[-1,0],[0,1]])
+Yv= np.dot(Y, v)
+'''
+plot_vectors([v, Yv], ['lightgreen', 'green'])
+plt.xlim(-4,4)
+plt.ylim(-1,4)
+'''
+
+# 5th commit - with matrix
+M = np.array([[-1,4],[2,-2]])
+Mv = np.dot(M, v)
+plot_vectors([v, Mv], ['lightgreen', 'green'])
+plt.xlim(-1,6)
+plt.ylim(-1,6)
 
 plt.show()
+
