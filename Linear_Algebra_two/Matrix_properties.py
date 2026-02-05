@@ -37,12 +37,24 @@ plot_vectors([v], ['lightblue']) # before is with light color
 plt.xlim(-1, 5)
 plt.ylim(-1, 5)  # Note: write  _= plt.ylim(-1,5) for jupyter notebook
 '''
+
+# 2nd commit
 I = np.array([[1,0],[0,1]]) # 2*2 Identity Matrix
 
 v_after = np.dot(v,I) # Matrix Multiplication with Identity Matrices
-
+'''
 plot_vectors([v_after], ['blue']) # after is darker color
 plt.xlim(-1,5)
 plt.ylim(-1,5)
+'''
+
+# 3rd commit
+E = np.array([[1,0],[0,-1]])
+
+Ev = np.dot(E, v)
+
+plot_vectors([v, Ev], ['lightgreen', 'green'])
+plt.xlim(-1,5)
+plt.ylim(-3,3)
 
 plt.show()
