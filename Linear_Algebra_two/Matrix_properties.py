@@ -32,11 +32,17 @@ def plot_vectors(vectors, colors):
         
 v = np.array([3, 1])
 
+'''
 plot_vectors([v], ['lightblue']) # before is with light color
 plt.xlim(-1, 5)
-_ = plt.ylim(-1, 5)  
+plt.ylim(-1, 5)  # Note: write  _= plt.ylim(-1,5) for jupyter notebook
+'''
+I = np.array([[1,0],[0,1]]) # 2*2 Identity Matrix
 
+v_after = np.dot(v,I) # Matrix Multiplication with Identity Matrices
 
-
+plot_vectors([v_after], ['blue']) # after is darker color
+plt.xlim(-1,5)
+plt.ylim(-1,5)
 
 plt.show()
