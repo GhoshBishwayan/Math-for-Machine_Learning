@@ -70,6 +70,10 @@ plt.ylim(-1,4)
 # 5th commit - with matrix
 M = np.array([[-1,4],[2,-2]])
 Mv = np.dot(M, v)
+
+v2 = np.array([2,1])
+
+plot_vectors([v, np.dot(M, v2)], ['lightgreen', 'green'])
 plot_vectors([v, Mv], ['lightgreen', 'green'])
 plt.xlim(-1,6)
 plt.ylim(-1,6)
