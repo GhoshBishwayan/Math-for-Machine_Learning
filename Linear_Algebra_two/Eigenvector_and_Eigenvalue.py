@@ -18,7 +18,7 @@ by both Vera Kublanovskaya and John Francis)
 '''
 import numpy as np
 import matplotlib.pyplot as plt
-from Matrix_properties import plot_vectors
+from plot_utils import plot_vectors
 
 A = np.array([[-1,4],[2,-2]])
 
