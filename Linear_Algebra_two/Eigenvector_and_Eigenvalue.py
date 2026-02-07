@@ -40,8 +40,29 @@ Av = np.dot(A, v) # Av
 
 Lambda_v = np.dot(lambdas_1, v) # λv
 
+'''
 plot_vectors([Av, v], ['blue', 'lightblue'])  # The vector didn't change its course and only extended
 plt.xlim(-1, 2)
 plt.ylim(-1, 2)
+'''
+
+v2 = V[:,1] # second column of V which is the second eigenvector 
+
+lambdas_2 = lambdas[1] # second vector's eigenvalue
+
+Av2 = np.dot(A, v2)
+
+Lambda_v2 = np.dot(lambdas_2, v2) 
+
+"""
+plot_vectors([Av2, v2], ['green', 'lightgreen'])
+plt.xlim(-2, 4)
+plt.ylim(-4, 2)
+
+"""
+
+plot_vectors([Av2, v2, Av, v], ['green', 'lightgreen', 'blue', 'lightblue'])
+plt.xlim(-2, 4)
+plt.ylim(-4, 2)
 
 plt.show()
