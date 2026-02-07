@@ -17,6 +17,8 @@ which was independently developed in the 1950s
 by both Vera Kublanovskaya and John Francis)
 '''
 import numpy as np
+import matplotlib.pyplot as plt
+from Matrix_properties import plot_vectors
 
 A = np.array([[-1,4],[2,-2]])
 
@@ -27,3 +29,19 @@ print(V)
 
 print("Eigenvalue")
 print(lambdas)
+
+# Now let's confirm  Av = λv  for the first Eigenvector
+
+v = V[:,0] # first column of V which is the first eigenvector
+
+lambdas_1 = lambdas[0] # first vector's eigenvalue
+
+Av = np.dot(A, v) # Av
+
+Lambda_v = np.dot(lambdas_1, v) # λv
+
+plot_vectors([Av, v], ['blue', 'lightblue'])  # The vector didn't change its course and only extended
+plt.xlim(-1, 2)
+plt.ylim(-1, 2)
+
+plt.show()
