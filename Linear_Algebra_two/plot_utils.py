@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-
+from mpl_toolkits.mplot3d import Axes3D
 
 def plot_vectors(vectors, colors):
     """
@@ -52,3 +52,36 @@ def plot_vectors(vectors, colors):
         )
         
         
+def plot_vectors_3d(vectors, colors):
+    """
+    Plot one or more vectors in 3D, specifying a color for each.
+
+    Arguments
+    ---------
+    vectors: list of lists / numpy arrays / torch tensors (shape: (3,))
+    colors: list of colors (same length as vectors)
+    """
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    # Axes through origin
+    ax.plot([-1, 1], [0, 0], [0, 0], color='lightgray')
+    ax.plot([0, 0], [-1, 1], [0, 0], color='lightgray')
+    ax.plot([0, 0], [0, 0], [-1, 1], color='lightgray')
+
+    for i, v in enumerate(vectors):
+        if hasattr(v, "detach"):
+            v = v.detach().cpu().numpy()
+        else:
+            v = np.asarray(v)
+
+        ax.quiver(
+            0, 0, 0,
+            v[0], v[1], v[2],
+            color=colors[i],
+            arrow_length_ratio=0.1,
+            linewidth=2
+        )
+
+    return fig, ax
