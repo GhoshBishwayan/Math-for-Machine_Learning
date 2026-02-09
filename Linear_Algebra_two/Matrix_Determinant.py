@@ -11,7 +11,7 @@ N = np.array([[-4, 1],[-8, 2]])
 detN = np.linalg.det(N) # 0.0
 
 '''LinAlgError("Singular matrix")'''
-# Ninv = np.linalg.inv(N) # This will give singular matrix error
+# Ninv = np.linalg.inv(N) # This will give 'singular matrix error'
 
 
 
