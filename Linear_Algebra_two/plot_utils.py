@@ -30,8 +30,8 @@ def plot_vectors(vectors, colors):
     plt.close('all')        # kill old figures
     
     plt.figure()
-    plt.axvline(x=0, color='lightgray')
-    plt.axhline(y=0, color='lightgray')
+    plt.axvline(x=0, color='lightgray',zorder=0)
+    plt.axhline(y=0, color='lightgray',zorder=0)
 
     # for i in range(len(vectors)):
     #     x = np.concatenate([[0,0],vectors[i]])
