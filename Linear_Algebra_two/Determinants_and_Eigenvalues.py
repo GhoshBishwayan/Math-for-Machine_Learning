@@ -42,7 +42,32 @@ Lets see with variuos |det(x)| on a basis vector
 
 B = np.array([[1,0],[0,1]])
 
+'''
 plot_vectors([B[0], B[1]], ['lightblue', 'lightgreen'])
 plt.xlim(-1, 3)
 plt.ylim(-1, 3)
 plt.show()
+'''
+
+''' applying singular vector N to B'''
+
+N = np.array([[-4., 1.],[-8.,2.]])
+
+N_det = np.linalg.det(N)
+
+NB = np.dot(N, B)
+
+# print(NB)
+
+N_eigval, N_eigvec = np.linalg.eig(N)
+
+# print(N_eigval)
+# print(N_eigvec)
+
+''' This vector opposite of each other which means doesn't represent any volume '''
+'''
+plot_vectors([B[0], B[1], NB[:,0], NB[:,1]], ['lightblue', 'lightgreen', 'Blue', 'green'])
+plt.xlim(-6, 3)
+plt.ylim(-10, 4)
+plt.show()
+'''
