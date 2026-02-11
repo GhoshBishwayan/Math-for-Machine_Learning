@@ -49,7 +49,7 @@ plt.ylim(-1, 3)
 plt.show()
 '''
 
-''' applying singular vector N to B'''
+''' applying singular vector N to B, |det(X)|=0 '''
 
 N = np.array([[-4., 1.],[-8.,2.]])
 
@@ -71,3 +71,64 @@ plt.xlim(-6, 3)
 plt.ylim(-10, 4)
 plt.show()
 '''
+
+''' applying Identity matrix I to B, |det(X)|=1 '''
+
+I = np.array([[1,0],[0,1]])
+
+I_det = np.linalg.det(I)
+
+IB = np.dot(I, B)
+
+# print(IB)
+I_eigval, I_eigvec = np.linalg.eig(I)
+
+# print(N_eigval)
+# print(N_eigvec)
+
+
+'''
+plot_vectors([B[0], B[1], IB[:,0], IB[:,1]], ['lightblue', 'lightgreen', 'Blue', 'green'])
+plt.xlim(-1, 4)
+plt.ylim(-1, 4)
+plt.show()
+'''
+
+''' applying  |det(X)| = 1 , but change direction and shape but remain on there spans and volume'''
+
+J = np.array([[-0.5, 0], [0, 2]])
+J_det = np.linalg.det(J)
+J_det_abs = np.abs(np.linalg.det(J))
+
+JB = np.dot(J, B)
+
+# print(JB)
+J_eigval, J_eigvec = np.linalg.eig(J)
+
+# print(J_eigval)
+# print(J_eigvec)
+'''
+plot_vectors([JB[:,0], JB[:,1], B[0], B[1]], ['Blue', 'green', 'lightblue', 'lightgreen'])
+plt.xlim(-1, 4)
+plt.ylim(-1, 4)
+plt.show()
+'''
+
+
+'''let's apply the matrix D, which scales vectors by doubling along both the x and y axes'''
+
+D = I*2
+
+D_det =np.linalg.det(D)
+DB = np.dot(D, B)
+
+# print(DB)
+D_eigval, D_eigvec = np.linalg.eig(D)
+
+# print(D_eigval)
+# print(D_eigvec)
+
+plot_vectors([DB[:,0], DB[:,1], B[0], B[1]], ['Blue', 'green','lightblue', 'lightgreen'])
+plt.xlim(-1, 4)
+plt.ylim(-1, 4)
+plt.show()
