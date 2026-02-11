@@ -2,6 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+# function to convert column of matrix to 1D vector:
+def vectorfy(mtrx, clmn):
+    return np.array(mtrx[:,clmn]).reshape(-1)
+
+
 def plot_vectors(vectors, colors):
     """
     Plot one or more vectors in a 2D plane, specifying a color for each.
