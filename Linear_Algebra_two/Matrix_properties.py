@@ -39,6 +39,8 @@ plt.xlim(-4,4)
 plt.ylim(-1,4)
 '''
 
+'''Applying a Flipping Matrix is an example of Affine Transformation'''
+
 # 5th commit - with matrix
 M = np.array([[-1,4],[2,-2]])
 Mv = np.dot(M, v)
