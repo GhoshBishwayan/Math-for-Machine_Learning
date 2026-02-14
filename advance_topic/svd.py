@@ -40,3 +40,13 @@ print(A)
 
 print("SVD: ")
 print(A_svd)
+
+
+'''
+SVD and eigendecomposition are closely related to each other:
+
+Left-singular vectors of A = eigenvectors of A(A^T)
+Right-singular vectors of A = eigenvectors of (A^T)A
+Non-zero singular velues of A = square roots of eigenvalues of A(A^T) = square roots of eigenvalues of (A^T)A
+
+'''
