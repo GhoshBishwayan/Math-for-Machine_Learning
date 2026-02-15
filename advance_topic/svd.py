@@ -16,6 +16,7 @@ elements along its diagonal are the singular values of A
 '''
 
 import numpy as np 
+import torch
 
 A = np.array([[-1, 2], [3, -2], [5, 7]])
 
@@ -50,3 +51,27 @@ Right-singular vectors of A = eigenvectors of (A^T)A
 Non-zero singular velues of A = square roots of eigenvalues of A(A^T) = square roots of eigenvalues of (A^T)A
 
 '''
+
+
+A_pt = torch.tensor([[-1, 2], [3, -2], [5, 7.]]) # float type required for eig
+
+A_pt_T = torch.t(A_pt)
+
+A_pt_eigVal, A_pt_eigVec = torch.linalg.eig(torch.matmul(A_pt, A_pt_T))
+
+# Left-singular vectors of A
+print(U)
+
+# eigenvectors of A(A^T)
+print(A_pt_eigVec)
+
+
+
+A2_pt_eigVal, A2_pt_eigVec = torch.linalg.eig(torch.matmul(A_pt_T, A_pt))
+
+
+# Right-singular vectors of A
+print(VT.T)
+
+# eigenvectors of (A^T)A
+print(A2_pt_eigVec)
