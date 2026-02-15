@@ -59,19 +59,28 @@ A_pt_T = torch.t(A_pt)
 
 A_pt_eigVal, A_pt_eigVec = torch.linalg.eig(torch.matmul(A_pt, A_pt_T))
 
+
+idx = torch.argsort(A_pt_eigVal.real, descending=True) 
+# Sorting eigenvalues because .eig doen't returns sorted eigvector
+# Also SVD returns largest to smallest singular vectors, descending order
+
+A_pt_eigVec_sorted = A_pt_eigVec[:, idx]
 # Left-singular vectors of A
 print(U)
 
 # eigenvectors of A(A^T)
-print(A_pt_eigVec)
+print(A_pt_eigVec_sorted)
 
 
 
 A2_pt_eigVal, A2_pt_eigVec = torch.linalg.eig(torch.matmul(A_pt_T, A_pt))
+
+index = torch.argsort(A2_pt_eigVal.real, descending=True) 
+A2_pt_eigVec_sorted = A2_pt_eigVec[:, index]
 
 
 # Right-singular vectors of A
 print(VT.T)
 
 # eigenvectors of (A^T)A
-print(A2_pt_eigVec)
+print(A2_pt_eigVec_sorted)
