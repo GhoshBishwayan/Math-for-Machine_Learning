@@ -2,4 +2,4 @@ pillow
 matplotlib 
 requests
 numpy
-pytorch
+torch
