@@ -43,7 +43,7 @@ U, sigma, V = np.linalg.svd(imgmat)
 U = np.matrix(U)
 V = np.matrix(V)
 
-plt.figure(figsize=(12, 8))
+plt.figure(figsize=(16, 10))
 
 
 for idx,i in enumerate([1, 2, 4, 8, 16, 32, 64])                    :
