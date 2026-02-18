@@ -34,7 +34,7 @@ imggray = img.convert('L')
 imgmat = np.array(imggray, dtype=float)
 # plt.imshow(imgmat, cmap='gray')
 
-
+# SVD
 U, sigma, V = np.linalg.svd(imgmat)
 
 # reconstimg = np.matrix(U[:, :1]) * np.diag(sigma[:1]) * np.matrix(V[:1, :])
