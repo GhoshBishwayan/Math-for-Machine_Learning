@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 import numpy as np
 
+
+'''Image comppression using SVD(Singular Value Decomposition)'''
 '''
 # Image from online
 url = "https://raw.githubusercontent.com/jonkrohn/DLTFpT/master/notebooks/oboe-with-book.jpg"
