@@ -39,4 +39,13 @@ Dplus = np.concatenate((Dinv, np.array([[0,0]]).T), axis=1)
 
 Aplus = np.dot(V, np.dot(Dplus, UT))
 
+print("Moore-Penrose Pseudoinverse : ")
 print(Aplus)
+
+# Using Numpy .pinv()
+
+Aplus_np = np.linalg.pinv(A)
+
+print("Moore-Penrose Pseudoinverse (Numpy in-bult) : ")
+print(Aplus_np)
+
