@@ -12,6 +12,7 @@ D^+ =  (D with reciprocal of all-non zero elements)^T
 
 '''
 import numpy as np
+import torch
 
 A = np.array([[-1,2],[3,-2],[5,7]])
 
@@ -49,3 +50,13 @@ Aplus_np = np.linalg.pinv(A)
 print("Moore-Penrose Pseudoinverse (Numpy in-bult) : ")
 print(Aplus_np)
 
+
+
+# Pytorch
+
+A_pt = torch.tensor([[-1,2],[3,-2],[5,7.]])
+
+A_pt_plus = torch.pinverse(A_pt)
+
+print("Moore-Penrose Pseudoinverse (Pytorch) : ")
+print(A_pt_plus)
