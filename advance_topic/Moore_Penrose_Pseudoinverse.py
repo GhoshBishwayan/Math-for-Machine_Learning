@@ -52,11 +52,30 @@ print(Aplus_np)
 
 
 
-# Pytorch
+# Pytorch-version
 
 A_pt = torch.tensor([[-1,2],[3,-2],[5,7.]])
 
+U_pt, d_pt, VT_pt = torch.linalg.svd(A_pt)
+
+# A^+ = V(D^+)U.T
+
+# D^+
+
+D_pt = torch.diag(d_pt)
+Dinv_pt = torch.linalg.inv(D_pt)
+
+# Matching dimensions 
+zero_col = torch.zeros(Dinv_pt.shape[0], 1)   # (2 × 1)
+Dplus_pt = torch.concatenate((Dinv_pt, zero_col), dim=1)
+
+
+
+Aplus_pt = VT_pt.T @ Dplus_pt @ U_pt.T
 A_pt_plus = torch.pinverse(A_pt)
 
 print("Moore-Penrose Pseudoinverse (Pytorch) : ")
 print(A_pt_plus)
+
+print("Moore-Penrose Pseudoinverse (Pytorch-manually) : ")
+print(Aplus_pt)
