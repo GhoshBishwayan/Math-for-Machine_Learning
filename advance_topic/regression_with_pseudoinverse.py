@@ -50,7 +50,7 @@ w = (X^+)y
 
 w = np.dot(np.linalg.pinv(X), y)
 
-print(w) # [[ 1.76       -0.46928571]]
+print(w) # [[ 1.76, -0.46928571]]
 
 # The first weight corresponds to the y-intercept of the line, which is typically denoted as b:
 
