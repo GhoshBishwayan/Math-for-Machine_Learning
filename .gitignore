@@ -1,4 +1,4 @@
 .venv/
 main.py
-Linear Algebra/Linear_Algebra_two/__pycache__/
+__pycache__/
 .vscode/
